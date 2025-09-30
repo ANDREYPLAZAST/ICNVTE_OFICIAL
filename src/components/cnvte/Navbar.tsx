@@ -2,17 +2,25 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, ChevronDown, Zap, Target, Award, Users, BookOpen, Camera, FileText, MessageCircle, ArrowRight, Play, Calendar, Trophy } from 'lucide-react'
+import Image from 'next/image'
+import { Space_Grotesk } from 'next/font/google'
+import { Menu, Calendar, Trophy } from 'lucide-react'
 import MobileMenu from './MobileMenu'
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+})
+
+import { Home, Archive, ImageIcon, FileText, Newspaper, Mail } from 'lucide-react'
+
 const navigation = [
-  { name: 'Inicio', href: '/', icon: Zap, color: 'from-slate-700 to-slate-800', desc: 'Página principal' },
-  { name: 'IV-CNVTE', href: '/iv-cnvte', icon: Target, color: 'from-gray-700 to-gray-800', desc: 'Edición anterior' },
-  { name: 'V-CNVTE', href: '/v-cnvte', icon: Award, color: 'from-blue-700 to-blue-800', desc: 'Competencia actual' },
-  { name: 'Galería', href: '/gallery', icon: Camera, color: 'from-slate-600 to-slate-700', desc: 'Fotos y videos' },
+  { name: 'Inicio', href: '/', icon: Home, color: 'from-slate-700 to-slate-800', desc: 'Página principal' },
+  { name: 'IV-CNVTE', href: '/iv-cnvte', icon: Archive, color: 'from-gray-700 to-gray-800', desc: 'Edición anterior' },
+  { name: 'Galería', href: '/gallery', icon: ImageIcon, color: 'from-slate-600 to-slate-700', desc: 'Fotos y videos' },
   { name: 'Reglamento', href: '/reglamento', icon: FileText, color: 'from-gray-600 to-gray-700', desc: 'Normas oficiales' },
-  { name: 'Blog', href: '/blog', icon: BookOpen, color: 'from-slate-600 to-slate-700', desc: 'Noticias' },
-  { name: 'Contacto', href: '/contacto', icon: MessageCircle, color: 'from-gray-600 to-gray-700', desc: 'Información' },
+  { name: 'Blog', href: '/blog', icon: Newspaper, color: 'from-slate-600 to-slate-700', desc: 'Noticias' },
+  { name: 'Contacto', href: '/contacto', icon: Mail, color: 'from-gray-600 to-gray-700', desc: 'Información' },
 ]
 
 export default function Navbar() {
@@ -63,8 +71,8 @@ export default function Navbar() {
       <header className={`fixed w-full top-0 z-40 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 shadow-lg border-b border-gray-200' 
-          : 'bg-white/90'
-      } backdrop-blur-sm`}>
+          : 'bg-transparent'
+      }`}>
         
         {/* Professional Top Bar */}
         <div className="bg-slate-800 text-white border-b border-slate-700">
@@ -105,18 +113,39 @@ export default function Navbar() {
             <Link href="/" className="group flex items-center space-x-3">
               <div className="relative">
                 {/* Simple Logo Container */}
-                <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center shadow-lg border border-slate-700 group-hover:bg-slate-700 transition-colors duration-200">
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+                <div className="w-12 h-12 rounded-lg overflow-hidden relative">
+                  {/* Logo para fondo transparente */}
+                  <Image
+                    src="/media/logo.png"
+                    alt="VCNVTE Logo"
+                    width={48}
+                    height={48}
+                    className={`w-full h-full object-contain transition-opacity duration-300 absolute top-0 left-0 ${
+                      isScrolled ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  />
+                  {/* Logo para fondo blanco */}
+                  <Image
+                    src="/media/logo-dark.png"
+                    alt="VCNVTE Logo"
+                    width={48}
+                    height={48}
+                    className={`w-full h-full object-contain transition-opacity duration-300 absolute top-0 left-0 ${
+                      isScrolled ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
                 </div>
               </div>
               
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-slate-800">
+                <span className={`text-2xl font-bold transition-colors duration-300 ${
+                  isScrolled ? 'text-slate-800' : 'text-white'
+                }`}>
                   V-CNVTE
                 </span>
-                <span className="text-xs font-medium text-gray-600 tracking-wide uppercase">
+                <span className={`text-xs font-medium tracking-wide uppercase transition-colors duration-300 ${
+                  isScrolled ? 'text-gray-600' : 'text-gray-200'
+                }`}>
                   COMPETENCIA 2025
                 </span>
               </div>
@@ -138,28 +167,19 @@ export default function Navbar() {
           {/* Professional Desktop Navigation */}
           <div className="hidden lg:flex lg:gap-x-1">
             {navigation.map((item) => {
-              const IconComponent = item.icon
               const isActive = activeSection === item.name
               
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    isActive 
-                      ? 'text-white bg-slate-800 shadow-md' 
-                      : 'text-gray-700 hover:text-slate-800 hover:bg-gray-100'
+                  className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${spaceGrotesk.className} ${
+                    isScrolled
+                      ? 'text-blue-600 hover:text-blue-800 hover:bg-gray-100'
+                      : 'text-white hover:text-gray-200'
                   }`}
                 >
-                  <IconComponent className={`w-4 h-4 ${
-                    isActive ? 'text-white' : 'text-gray-500'
-                  }`} />
                   <span>{item.name}</span>
-                  
-                  {/* Simple Active Indicator */}
-                  {isActive && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600" />
-                  )}
                 </Link>
               )
             })}
@@ -169,15 +189,16 @@ export default function Navbar() {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
               href="/v-cnvte"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 shadow-sm hover:shadow-md"
+              className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md ${
+                isScrolled 
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                  : 'bg-white/20 hover:bg-white/30 text-white border border-white/50'
+              }`}
             >
               Participar Ahora
             </Link>
           </div>
         </nav>
-        
-        {/* Simple Bottom Border */}
-        <div className="h-px bg-gray-200" />
       </header>
       
       <MobileMenu 

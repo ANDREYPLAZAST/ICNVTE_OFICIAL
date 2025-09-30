@@ -1,7 +1,6 @@
 import HeroVideo from '@/components/cnvte/HeroVideo'
 import UniCarousel from '@/components/cnvte/UniCarousel'
 import SectionTitle from '@/components/cnvte/SectionTitle'
-import SponsorMarquee from '@/components/cnvte/SponsorMarquee'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -224,21 +223,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Sponsors Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Patrocinadores
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Empresas e instituciones que impulsan el futuro de la movilidad eléctrica
-            </p>
-          </div>
-          <SponsorMarquee />
         </div>
       </section>
     </main>

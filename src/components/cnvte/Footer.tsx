@@ -13,8 +13,7 @@ export default function Footer() {
               <span className="text-2xl font-bold">V-CNVTE</span>
             </div>
             <p className="text-slate-300 mb-4 max-w-md">
-              Competencia Nacional de Videojuegos y Tecnología Educativa. 
-              Impulsando la innovación en el desarrollo de videojuegos educativos en Colombia.
+              Competencia Nacional de vehiculos de tracción eléctrica. 
             </p>
             <div className="text-sm text-slate-400">
               Universidad Militar Nueva Granada
@@ -28,8 +27,8 @@ export default function Footer() {
               {[
                 { name: 'Inicio', href: '/' },
                 { name: 'V-CNVTE', href: '/v-cnvte' },
-                { name: 'Reglamento', href: '/reglamento' },
                 { name: 'Galería', href: '/gallery' },
+                { name: 'Reglamento', href: '/reglamento' },
                 { name: 'Blog', href: '/blog' },
               ].map((link) => (
                 <li key={link.name}>
@@ -69,7 +68,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-slate-400 text-sm">
-            © 2024 Universidad Militar Nueva Granada. Todos los derechos reservados.
+            © 2025 Universidad Militar Nueva Granada. Todos los derechos reservados.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-slate-400 hover:text-blue-400 text-sm transition-colors">
