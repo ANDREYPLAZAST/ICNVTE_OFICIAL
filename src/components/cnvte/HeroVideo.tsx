@@ -1,9 +1,19 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  
+  // Valores finales para las estadísticas
+  const stats = [
+    { end: 10, suffix: '+', label: 'Equipos Participantes' },
+    { end: 10, suffix: '+', label: 'Universidades' },
+    { end: 100, suffix: '', label: 'km/h Máx' },
+  ];
+
+  // Estados para los contadores animados
+  const [counts, setCounts] = useState([0, 0, 0]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -12,6 +22,48 @@ export default function HeroVideo() {
         console.log('Autoplay prevented')
       })
     }
+  }, [])
+
+  // Efecto para animar los contadores
+  useEffect(() => {
+    const durations = [1500, 1500, 2000]; // ms para cada contador
+    const frameRate = 60; // frames por segundo
+    const totalFrames = durations.map(duration => Math.floor(duration / (1000 / frameRate)));
+
+    stats.forEach((stat, i) => {
+      let currentFrame = 0;
+      const frames = totalFrames[i];
+      
+      const animate = () => {
+        const progress = currentFrame / frames;
+        const easeOutProgress = 1 - Math.pow(1 - progress, 3); // Easing para suavizar
+        const currentValue = Math.floor(easeOutProgress * stat.end);
+        
+        setCounts(prev => {
+          const next = [...prev];
+          next[i] = currentValue;
+          return next;
+        });
+        
+        currentFrame++;
+        
+        if (currentFrame <= frames) {
+          requestAnimationFrame(animate);
+        } else {
+          // Asegurar que llega al valor final
+          setCounts(prev => {
+            const next = [...prev];
+            next[i] = stat.end;
+            return next;
+          });
+        }
+      };
+      
+      // Pequeño delay escalonado para que no todas empiecen al mismo tiempo
+      setTimeout(() => {
+        requestAnimationFrame(animate);
+      }, i * 200);
+    });
   }, [])
 
   return (
@@ -80,18 +132,14 @@ export default function HeroVideo() {
         
         {/* Statistics */}
         <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">10+</div>
-            <div className="text-sm text-white/80 font-medium">Equipos Participantes</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">10+</div>
-            <div className="text-sm text-white/80 font-medium">Universidades</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">100</div>
-            <div className="text-sm text-white/80 font-medium">km/h Máx</div>
-          </div>
+          {stats.map((stat, i) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                {counts[i]}{stat.suffix}
+              </div>
+              <div className="text-sm text-white/80 font-medium">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

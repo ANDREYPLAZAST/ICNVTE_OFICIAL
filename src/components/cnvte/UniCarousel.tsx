@@ -58,7 +58,7 @@ export default function UniCarousel() {
     <div className="relative overflow-hidden">
       <div 
         ref={marqueeRef}
-        className="flex space-x-8 animate-marquee whitespace-nowrap"
+        className="flex space-x-8 animate-marquee"
         style={{
           animationDuration: '30s',
           animationTimingFunction: 'linear',
@@ -73,29 +73,21 @@ export default function UniCarousel() {
             className="flex-shrink-0 w-[400px] bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-all duration-500 ease-out transform hover:shadow-xl"
           >
             <div className="md:flex">
-              <div className="md:w-1/2 relative h-48">
+              <div className="md:w-1/2 relative h-48 flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
                 <Image
-                  src={university.image}
-                  alt={university.name}
-                  fill
-                  className="object-cover transition-transform duration-500 ease-out hover:scale-110"
+                  src={university.logo}
+                  alt={`Logo ${university.name}`}
+                  width={120}
+                  height={120}
+                  className="object-contain transition-transform duration-500 ease-out hover:scale-110"
                 />
               </div>
-              <div className="md:w-1/2 p-6 flex flex-col justify-center bg-gradient-to-r from-white to-slate-50">
-                <div className="mb-3 transform transition-all duration-500 ease-out hover:scale-110">
-                  <Image
-                    src={university.logo}
-                    alt={`Logo ${university.name}`}
-                    width={60}
-                    height={60}
-                    className="object-contain"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2">
+              <div className="md:w-1/2 p-4 flex flex-col justify-end bg-gradient-to-r from-white to-slate-50 min-h-[192px]">
+                <h3 className="text-sm md:text-base font-bold text-slate-800 mb-2 leading-snug break-words hyphens-auto overflow-wrap-anywhere">
                   {university.name}
                 </h3>
                 <div className="flex items-center text-sm text-slate-500">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
                     {university.city}
                   </span>
                 </div>
