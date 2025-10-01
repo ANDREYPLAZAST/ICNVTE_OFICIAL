@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { GamepadIcon, Mail, Phone, MapPin } from 'lucide-react'
+import Image from 'next/image'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -9,7 +10,13 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <GamepadIcon className="h-8 w-8 text-blue-400" />
+              <Image 
+                src="/media/logo.png" 
+                alt="V-CNVTE Logo" 
+                width={120} 
+                height={120} 
+                className="object-contain"
+              />
               <span className="text-2xl font-bold">V-CNVTE</span>
             </div>
             <p className="text-slate-300 mb-4 max-w-md">
@@ -53,7 +60,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-blue-400" />
-                <span className="text-slate-300">+57 (1) 650 0000</span>
+                <span className="text-slate-300">+57 316 5328764</span>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 text-blue-400 mt-1" />
