@@ -95,10 +95,10 @@ export default function Navbar() {
               <div className="flex items-center space-x-4">
                 <div className="hidden lg:flex items-center space-x-4 text-xs">
                   <span className="text-gray-400">Estado:</span>
-                  <span className="text-blue-400 font-medium">Inscripciones Abiertas</span>
+                  <span className="text-blue-400 font-medium">Inscripciones Cerradas</span>
                 </div>
                 <div className="bg-blue-600 px-3 py-1 rounded text-xs font-medium text-white">
-                  Fase: Registro
+                  Fase: Espera de competencia
                 </div>
               </div>
             </div>

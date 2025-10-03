@@ -9,7 +9,7 @@ export default function HeroVideo() {
   const stats = [
     { end: 10, suffix: '+', label: 'Equipos Participantes' },
     { end: 10, suffix: '+', label: 'Universidades' },
-    { end: 100, suffix: '', label: 'km/h Máx' },
+    { end: 48, suffix: 'V', label: 'Máx' },
   ];
 
   // Estados para los contadores animados
