@@ -63,4 +63,11 @@ export const universities: University[] = [
     image: "/media/universities/rosario-campus.jpg",
     description: "Universidad con más de 360 años de historia, enfocada en la excelencia académica y la formación de ciudadanos éticos y competentes."
   },
+  {
+    name: "Universidad de La Sabana",
+    city: "Chía",
+    logo: "/media/logos/SABANA.png",
+    image: "/media/universities/unal-campus.jpg",
+    description: "La universidad pública más importante de Colombia, reconocida por su excelencia académica e investigación de alto nivel."
+  },
 ]
