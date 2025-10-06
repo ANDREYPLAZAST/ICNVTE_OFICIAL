@@ -15,7 +15,6 @@ export default function IVCnvtePage() {
       team: "EduGamers",
       university: "Universidad Nacional",
       project: "MathQuest VR",
-      prize: "$20,000,000",
       description: "Juego de realidad virtual para el aprendizaje de matemáticas en educación básica"
     },
     {
@@ -23,7 +22,6 @@ export default function IVCnvtePage() {
       team: "TechLearners",
       university: "Universidad de los Andes",
       project: "CodeAcademy Kids",
-      prize: "$15,000,000",
       description: "Plataforma gamificada para enseñar programación a niños"
     },
     {
@@ -31,7 +29,6 @@ export default function IVCnvtePage() {
       team: "InnovaEdu",
       university: "Pontificia Universidad Javeriana",
       project: "HistoryAR",
-      prize: "$10,000,000", 
       description: "Aplicación de realidad aumentada para explorar eventos históricos"
     }
   ]
@@ -39,8 +36,7 @@ export default function IVCnvtePage() {
   const stats = [
     { icon: Users, label: "Equipos Participantes", value: "127" },
     { icon: Calendar, label: "Universidades", value: "23" },
-    { icon: Trophy, label: "Proyectos Finalistas", value: "15" },
-    { icon: Award, label: "Total en Premios", value: "$50M" }
+    { icon: Trophy, label: "Proyectos Finalistas", value: "15" }
   ]
 
   return (
@@ -66,7 +62,7 @@ export default function IVCnvtePage() {
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -111,23 +107,15 @@ export default function IVCnvtePage() {
                     </div>
                   </div>
                   <div className="md:w-2/3 p-8">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <h3 className="text-2xl font-bold text-slate-800 mb-2">
-                          {winner.project}
-                        </h3>
-                        <p className="text-lg text-blue-600 font-semibold">
-                          Equipo {winner.team}
-                        </p>
-                        <p className="text-slate-600">{winner.university}</p>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-green-600">
-                          {winner.prize}
-                        </div>
-                        <div className="text-sm text-slate-500">Premio</div>
-                      </div>
-                    </div>
+                    <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                      {winner.project}
+                    </h3>
+                    <p className="text-lg text-blue-600 font-semibold">
+                      Equipo {winner.team}
+                    </p>
+                    <p className="text-slate-600">{winner.university}</p>
+                  </div>
                     <p className="text-slate-700 leading-relaxed">
                       {winner.description}
                     </p>
