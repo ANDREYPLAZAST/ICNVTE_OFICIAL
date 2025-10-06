@@ -76,9 +76,9 @@ export default function HeroVideo() {
         muted
         loop
         playsInline
-        poster="/video_home/webPageLoopVcnvte.mp4"
+        poster="https://res.cloudinary.com/dcljjtnxr/video/upload/v1759766364/webPageLoopVcnvte_1_ltkolc.mp4"
       >
-        <source src="/video_home/webPageLoopVcnvte.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dcljjtnxr/video/upload/v1759766364/webPageLoopVcnvte_1_ltkolc.mp4" type="video/mp4" />
       </video>
       
       {/* Professional Overlay */}
