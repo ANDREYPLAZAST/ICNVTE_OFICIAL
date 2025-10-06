@@ -33,10 +33,9 @@ export default function Footer() {
             <ul className="space-y-2">
               {[
                 { name: 'Inicio', href: '/' },
-                { name: 'V-CNVTE', href: '/v-cnvte' },
+                { name: 'IV-CNVTE', href: '/iv-cnvte' },
                 { name: 'Galería', href: '/gallery' },
                 { name: 'Reglamento', href: '/reglamento' },
-                { name: 'Blog', href: '/blog' },
               ].map((link) => (
                 <li key={link.name}>
                   <Link 

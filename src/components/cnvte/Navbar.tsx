@@ -12,14 +12,13 @@ const spaceGrotesk = Space_Grotesk({
   weight: ['400', '500', '600', '700'],
 })
 
-import { Home, Archive, ImageIcon, FileText, Newspaper, Mail } from 'lucide-react'
+import { Home, Archive, ImageIcon, FileText, Mail } from 'lucide-react'
 
 const navigation = [
   { name: 'Inicio', href: '/', icon: Home, color: 'from-slate-700 to-slate-800', desc: 'Página principal' },
   { name: 'IV-CNVTE', href: '/iv-cnvte', icon: Archive, color: 'from-gray-700 to-gray-800', desc: 'Edición anterior' },
   { name: 'Galería', href: '/gallery', icon: ImageIcon, color: 'from-slate-600 to-slate-700', desc: 'Fotos y videos' },
   { name: 'Reglamento', href: '/reglamento', icon: FileText, color: 'from-gray-600 to-gray-700', desc: 'Normas oficiales' },
-  { name: 'Blog', href: '/blog', icon: Newspaper, color: 'from-slate-600 to-slate-700', desc: 'Noticias' },
   { name: 'Contacto', href: '/contacto', icon: Mail, color: 'from-gray-600 to-gray-700', desc: 'Información' },
 ]
 
