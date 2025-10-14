@@ -96,7 +96,7 @@ export default function ContactoPage() {
                 href="tel:+5716500000"
                 className="text-blue-600 hover:text-blue-700 font-medium transition-colors duration-300 hover:underline"
               >
-                +57 316 5328764
+                +57 310 809 0139
               </a>
             </div>
 
