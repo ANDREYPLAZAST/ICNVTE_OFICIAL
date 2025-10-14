@@ -14,13 +14,13 @@ export default function CompetitionOverview() {
       icon: <BatteryCharging className="w-6 h-6 text-white" />,
       title: "Eficiencia Energética",
       description: "La competencia evalúa no solo la velocidad, sino la eficiencia energética y la innovación en sistemas de propulsión eléctrica.",
-      gradient: "from-green-500 to-green-600"
+      gradient: "from-blue-500 to-blue-600"
     },
     {
       icon: <Award className="w-6 h-6 text-white" />,
       title: "Competencia Integral",
       description: "Pruebas de diseño, inspección técnica, pruebas habilitantes y dinámicas que evalúan todos los aspectos del vehículo.",
-      gradient: "from-orange-500 to-orange-600"
+      gradient: "from-blue-500 to-blue-600"
     }
   ]
 
@@ -35,13 +35,13 @@ export default function CompetitionOverview() {
       number: 2,
       title: "Prueba de Aceleración",
       description: "Velocidad máxima en línea recta",
-      color: "bg-green-500"
+      color: "bg-blue-500"
     },
     {
       number: 3,
       title: "Grand Prix",
       description: "Resistencia con eficiencia energética",
-      color: "bg-orange-500"
+      color: "bg-blue-500"
     }
   ]
 

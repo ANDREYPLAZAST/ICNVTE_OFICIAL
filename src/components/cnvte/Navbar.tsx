@@ -198,7 +198,7 @@ export default function Navbar() {
           {/* Professional CTA Button */}
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link
-              href="/v-cnvte"
+              href="/contacto"
               className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md ${
                 isScrolled 
                   ? 'bg-blue-600 hover:bg-blue-700 text-white' 

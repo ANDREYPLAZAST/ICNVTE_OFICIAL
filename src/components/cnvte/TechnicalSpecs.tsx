@@ -14,19 +14,19 @@ export default function TechnicalSpecs() {
       icon: <ShieldHalf className="w-6 h-6 text-white" />,
       title: "Seguridad",
       description: "Protección integral del piloto ante volcamientos y accidentes.",
-      gradient: "from-green-500 to-green-600"
+      gradient: "from-blue-500 to-blue-600"
     },
     {
       icon: <Ruler className="w-6 h-6 text-white" />,
       title: "Dimensiones",
       description: "Tamaño optimizado para agilidad y maniobrabilidad.",
-      gradient: "from-orange-500 to-orange-600"
+      gradient: "from-blue-500 to-blue-600"
     },
     {
       icon: <Settings className="w-6 h-6 text-white" />,
       title: "Mecánica",
       description: "Sistema de frenos y manejo preciso para máxima seguridad.",
-      gradient: "from-purple-500 to-purple-600"
+      gradient: "from-blue-500 to-blue-600"
     }
   ]
 
