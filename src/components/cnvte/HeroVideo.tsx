@@ -9,7 +9,7 @@ export default function HeroVideo() {
   const stats = [
     { end: 10, suffix: '+', label: 'Equipos Participantes' },
     { end: 10, suffix: '+', label: 'Universidades' },
-    { end: 48, suffix: 'V', label: 'Máx' },
+    { end: 100, suffix: '+', label: 'Estudiantes' },
   ];
 
   // Estados para los contadores animados
@@ -67,7 +67,7 @@ export default function HeroVideo() {
   }, [])
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen h-[120vh] flex items-center justify-center overflow-hidden">
       {/* Video Background */}
       <video
         ref={videoRef}
@@ -85,10 +85,7 @@ export default function HeroVideo() {
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-white/20" />
       
       {/* Main Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto mt-24">
-        
-        {/* Spacing for top content */}
-        <div className="mb-6"></div>
+      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
         
         {/* Main Title */}
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tight">
@@ -108,23 +105,23 @@ export default function HeroVideo() {
         </div>
         
         {/* Description */}
-        <p className="text-lg md:text-xl mb-16 text-white/90 max-w-4xl mx-auto leading-relaxed font-light">
+        <p className="text-lg md:text-xl mb-12 text-white/90 max-w-4xl mx-auto leading-relaxed font-light">
           Donde la innovación, la eficiencia energética y la ingeniería de vanguardia 
           <span className="text-blue-200 font-medium"> se unen para crear el futuro de la movilidad eléctrica</span>
         </p>
         
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
           <a
             href="/v-cnvte"
-            className="group relative px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 shadow-lg"
+            className="group relative px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 shadow-lg"
           >
             <span className="relative z-10">Participar Ahora</span>
           </a>
           
           <a
             href="/reglamento"
-            className="group relative px-8 py-4 border-2 border-white/30 text-white font-semibold text-lg rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/50 backdrop-blur-sm"
+            className="group relative px-6 py-3 border-2 border-white/30 text-white font-semibold text-base rounded-lg transition-all duration-300 hover:bg-white/10 hover:border-white/50 backdrop-blur-sm"
           >
             Ver Reglamento
           </a>

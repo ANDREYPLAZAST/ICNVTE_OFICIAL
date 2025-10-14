@@ -27,8 +27,17 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('Inicio')
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [isDarkPage, setIsDarkPage] = useState(false)
 
   useEffect(() => {
+    // Check if current page has dark background
+    const checkDarkPage = () => {
+      const pathname = window.location.pathname
+      setIsDarkPage(pathname === '/iv-cnvte')
+    }
+    
+    checkDarkPage()
+    
     const handleScroll = () => {
       const scrollY = window.scrollY
       setIsScrolled(scrollY > 20)
@@ -60,14 +69,14 @@ export default function Navbar() {
   return (
     <>
       {/* Minimal Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-0.5 bg-gray-200 z-50">
+      <div className="fixed top-0 left-0 w-full h-0.5 bg-gray-200 z-[60]">
         <div 
           className="h-full bg-blue-600 transition-all duration-300 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
-      <header className={`fixed w-full top-0 z-40 transition-all duration-300 ${
+      <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 shadow-lg border-b border-gray-200' 
           : 'bg-transparent'
@@ -138,12 +147,12 @@ export default function Navbar() {
               
               <div className="flex flex-col">
                 <span className={`text-2xl font-bold transition-colors duration-300 ${
-                  isScrolled ? 'text-slate-800' : 'text-white'
+                  isScrolled ? 'text-slate-800' : (isDarkPage ? 'text-white' : 'text-white')
                 }`}>
                   V-CNVTE
                 </span>
                 <span className={`text-xs font-medium tracking-wide uppercase transition-colors duration-300 ${
-                  isScrolled ? 'text-gray-600' : 'text-gray-200'
+                  isScrolled ? 'text-gray-600' : (isDarkPage ? 'text-gray-200' : 'text-gray-200')
                 }`}>
                   COMPETENCIA 2025
                 </span>
@@ -175,6 +184,8 @@ export default function Navbar() {
                   className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${spaceGrotesk.className} ${
                     isScrolled
                       ? 'text-blue-600 hover:text-blue-800 hover:bg-gray-100'
+                      : isDarkPage
+                      ? 'text-white hover:text-gray-200 hover:bg-white/10'
                       : 'text-white hover:text-gray-200'
                   }`}
                 >
@@ -191,6 +202,8 @@ export default function Navbar() {
               className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md ${
                 isScrolled 
                   ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                  : isDarkPage
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white'
                   : 'bg-white/20 hover:bg-white/30 text-white border border-white/50'
               }`}
             >
