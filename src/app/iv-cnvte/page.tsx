@@ -25,6 +25,41 @@ export default function IVCnvtePage() {
     { icon: MapPin, label: "Kilometros recorridos", value: 14 }
   ]
 
+  const galleryPreview = [
+    {
+      src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504629/iv-cnvte-1_eltohz.jpg",
+      alt: "Momento 1 IV-CNVTE"
+    },
+    {
+      src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504634/iv-cnvte-2_lr4vhq.jpg",
+      alt: "Momento 2 IV-CNVTE"
+    },
+    {
+      src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504630/iv-cnvte-3_pjyade.jpg",
+      alt: "Momento 3 IV-CNVTE"
+    },
+    {
+      src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504630/iv-cnvte-4_p3wrym.jpg",
+      alt: "Momento 4 IV-CNVTE"
+    },
+    {
+      src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504632/iv-cnvte-5_ctqkvg.jpg",
+      alt: "Momento 5 IV-CNVTE"
+    },
+    {
+      src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504634/iv-cnvte-6_s9ysqz.jpg",
+      alt: "Momento 6 IV-CNVTE"
+    },
+    {
+      src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504638/iv-cnvte-7_uastiw.jpg",
+      alt: "Momento 7 IV-CNVTE"
+    },
+    {
+      src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504637/iv-cnvte-8_t3hba3.jpg",
+      alt: "Momento 8 IV-CNVTE"
+    }
+  ]
+
   // Estados para los contadores animados
   const [counts, setCounts] = useState([0, 0, 0])
   const [hasAnimated, setHasAnimated] = useState(false)
@@ -175,11 +210,11 @@ export default function IVCnvtePage() {
             subtitle="Revive los mejores momentos de IV-CNVTE 2024"
           />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div key={i} className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
+            {galleryPreview.map((image, index) => (
+              <div key={index} className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer">
                 <Image
-                  src={`/media/gallery/iv-cnvte-${i}.jpg`}
-                  alt={`Momento ${i} IV-CNVTE`}
+                  src={image.src}
+                  alt={image.alt}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />

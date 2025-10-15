@@ -9,6 +9,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'V-CNVTE | Universidad Militar Nueva Granada',
   description: 'Competencia Nacional de Videojuegos y Tecnología Educativa',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
