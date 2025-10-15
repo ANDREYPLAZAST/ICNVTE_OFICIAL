@@ -12,7 +12,7 @@ export interface GalleryImage {
 export const galleryImages: GalleryImage[] = [
   // V-CNVTE 2024 - Ceremonias
   {
-    src: "/media/gallery/galeria-01.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503638/galeria-01_v4fqpg.jpg",
     alt: "Ceremonia de apertura V-CNVTE 2024",
     title: "Ceremonia de Apertura 2024",
     description: "",
@@ -22,7 +22,7 @@ export const galleryImages: GalleryImage[] = [
     height: 300
   },
   {
-    src: "/media/gallery/galeria-02.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503640/galeria-02_ha34hu.jpg",
     alt: "Registro de participantes",
     title: "Recepción de Participantes",
     description: "",
@@ -32,7 +32,7 @@ export const galleryImages: GalleryImage[] = [
     height: 240
   },
   {
-    src: "/media/gallery/galeria-03.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503642/galeria-03_odpdxf.jpg",
     alt: "Feria universitaria",
     title: "Feria Universitaria",
     description: "",
@@ -42,7 +42,7 @@ export const galleryImages: GalleryImage[] = [
     height: 300
   },
   {
-    src: "/media/gallery/galeria-04.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503639/galeria-04_o3ixcn.jpg",
     alt: "Cóctel de integración",
     title: "Cóctel de Integración",
     description: "",
@@ -54,7 +54,7 @@ export const galleryImages: GalleryImage[] = [
   
   // V-CNVTE 2024 - Competencia y Proyectos
   {
-    src: "/media/gallery/galeria-05.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503641/galeria-05_w2gls7.jpg",
     alt: "Hackathon educativo",
     title: "Hackathon Educativo",
     description: "",
@@ -64,7 +64,7 @@ export const galleryImages: GalleryImage[] = [
     height: 350
   },
   {
-    src: "/media/gallery/galeria-06.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503646/galeria-06_mldrns.jpg",
     alt: "Desarrollo colaborativo",
     title: "Equipos Desarrollando",
     description: "",
@@ -74,7 +74,7 @@ export const galleryImages: GalleryImage[] = [
     height: 260
   },
   {
-    src: "/media/gallery/galeria-07.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503641/galeria-07_lbqtxp.jpg",
     alt: "Networking entre participantes",
     title: "Networking de Participantes",
     description: "",
@@ -86,7 +86,7 @@ export const galleryImages: GalleryImage[] = [
   
   // V-CNVTE 2024 - Presentaciones
   {
-    src: "/media/gallery/galeria-08.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503641/galeria-08_jah0y3.jpg",
     alt: "Proyecto de realidad virtual",
     title: "Proyecto VR Educativo",
     description: "",
@@ -96,7 +96,7 @@ export const galleryImages: GalleryImage[] = [
     height: 400
   },
   {
-    src: "/media/gallery/galeria-09.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503641/galeria-09_gw2ohg.jpg",
     alt: "Simulador de vuelo VR",
     title: "Simulador de Vuelo VR",
     description: "",
@@ -106,7 +106,7 @@ export const galleryImages: GalleryImage[] = [
     height: 360
   },
   {
-    src: "/media/gallery/galeria-10.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503642/galeria-10_ruoi57.jpg",
     alt: "Laboratorio virtual de química",
     title: "ChemLab Virtual",
     description: "",
@@ -116,7 +116,7 @@ export const galleryImages: GalleryImage[] = [
     height: 330
   },
   {
-    src: "/media/gallery/galeria-11.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503642/galeria-11_caadba.jpg",
     alt: "Demo de juego educativo",
     title: "Juego Educativo Interactivo",
     description: "",
@@ -126,7 +126,7 @@ export const galleryImages: GalleryImage[] = [
     height: 320
   },
   {
-    src: "/media/gallery/galeria-12.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503643/galeria-12_zfelcm.jpg",
     alt: "Proyecto de realidad aumentada",
     title: "Aplicación AR Educativa",
     description: "",
@@ -138,7 +138,7 @@ export const galleryImages: GalleryImage[] = [
   
   // V-CNVTE 2024 - Talleres y Conferencias
   {
-    src: "/media/gallery/galeria-13.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503643/galeria-13_agolya.jpg",
     alt: "Conferencia sobre IA en educación",
     title: "Conferencia IA Educativa",
     description: "",
@@ -148,7 +148,7 @@ export const galleryImages: GalleryImage[] = [
     height: 290
   },
   {
-    src: "/media/gallery/galeria-14.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503645/galeria-14_bnb5xl.jpg",
     alt: "Taller de desarrollo Unity",
     title: "Taller Unity Avanzado",
     description: "",
@@ -158,7 +158,7 @@ export const galleryImages: GalleryImage[] = [
     height: 250
   },
   {
-    src: "/media/gallery/galeria-15.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503643/galeria-15_fctiby.jpg",
     alt: "Desarrollo de apps móviles",
     title: "Taller Apps Educativas",
     description: "",
@@ -168,7 +168,7 @@ export const galleryImages: GalleryImage[] = [
     height: 310
   },
   {
-    src: "/media/gallery/galeria-16.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503643/galeria-16_edvhbv.jpg",
     alt: "Sesión de mentoría",
     title: "Mentoría Especializada",
     description: "",
@@ -178,7 +178,7 @@ export const galleryImages: GalleryImage[] = [
     height: 270
   },
   {
-    src: "/media/gallery/galeria-17.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503644/galeria-17_kbf5zm.jpg",
     alt: "Panel de rectores",
     title: "Panel de Rectores",
     description: "",
@@ -188,7 +188,7 @@ export const galleryImages: GalleryImage[] = [
     height: 290
   },
   {
-    src: "/media/gallery/galeria-18.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503650/galeria-18_pcq84i.jpg",
     alt: "Taller de diseño UX/UI",
     title: "Taller Diseño UX/UI",
     description: "",
@@ -200,7 +200,7 @@ export const galleryImages: GalleryImage[] = [
   
   // IV-CNVTE 2023
   {
-    src: "/media/gallery/galeria-19.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503665/galeria-19_yjgfqp.jpg",
     alt: "Ganadores IV-CNVTE 2023",
     title: "Premiación IV-CNVTE 2023",
     description: "",
@@ -210,7 +210,7 @@ export const galleryImages: GalleryImage[] = [
     height: 350
   },
   {
-    src: "/media/gallery/galeria-20.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503672/galeria-20_av8wsa.jpg",
     alt: "Evaluación de proyectos 2023",
     title: "Evaluación de Jueces",
     description: "",
@@ -220,7 +220,7 @@ export const galleryImages: GalleryImage[] = [
     height: 300
   },
   {
-    src: "/media/gallery/galeria-21.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503673/galeria-21_yyyvgl.jpg",
     alt: "Feria de proyectos 2023",
     title: "Exhibición de Proyectos",
     description: "",
@@ -230,7 +230,7 @@ export const galleryImages: GalleryImage[] = [
     height: 340
   },
   {
-    src: "/media/gallery/galeria-22.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503672/galeria-22_mvqpkr.jpg",
     alt: "Juego matemático RPG",
     title: "MathQuest Adventure",
     description: "",
@@ -240,7 +240,7 @@ export const galleryImages: GalleryImage[] = [
     height: 380
   },
   {
-    src: "/media/gallery/galeria-23.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503672/galeria-23_ujgdxn.jpg",
     alt: "Proyecto IoT educativo",
     title: "Solución IoT para Aulas",
     description: "",
@@ -250,7 +250,7 @@ export const galleryImages: GalleryImage[] = [
     height: 260
   },
   {
-    src: "/media/gallery/galeria-24.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503672/galeria-24_sh0pim.jpg",
     alt: "Ceremonia de clausura 2023",
     title: "Clausura IV-CNVTE 2023",
     description: "",
@@ -262,7 +262,7 @@ export const galleryImages: GalleryImage[] = [
   
   // III-CNVTE 2022
   {
-    src: "/media/gallery/galeria-25.jpg",
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503672/galeria-25_ncnsh6.jpg",
     alt: "Ganadores III-CNVTE 2022",
     title: "Premiación III-CNVTE 2022",
     description: "",
@@ -270,5 +270,75 @@ export const galleryImages: GalleryImage[] = [
     year: "2022",
     university: "UMNG",
     height: 320
+  },
+  {
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503673/galeria-26_m6edq8.jpg",
+    alt: "Exposición de proyectos 2022",
+    title: "Feria de Innovación 2022",
+    description: "",
+    category: "2022",
+    year: "2022",
+    university: "UMNG",
+    height: 300
+  },
+  {
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503673/galeria-27_j1vfof.jpg",
+    alt: "Taller de robótica educativa",
+    title: "Robótica en Educación",
+    description: "",
+    category: "2022",
+    year: "2022",
+    university: "EAFIT",
+    height: 290
+  },
+  {
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503673/galeria-28_pqsp1t.jpg",
+    alt: "Conferencia magistral 2022",
+    title: "Conferencia Tecnología Educativa",
+    description: "",
+    category: "2022",
+    year: "2022",
+    university: "Uniandes",
+    height: 310
+  },
+  {
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503676/galeria-29_oyyfmv.jpg",
+    alt: "Networking entre participantes",
+    title: "Sesión de Networking",
+    description: "",
+    category: "2022",
+    year: "2022",
+    university: "Universidad de La Sabana",
+    height: 280
+  },
+  {
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503675/galeria-30_e7wqkj.jpg",
+    alt: "Evaluación de proyectos 2022",
+    title: "Jurado Calificador",
+    description: "",
+    category: "2022",
+    year: "2022",
+    university: "UMNG",
+    height: 320
+  },
+  {
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503677/galeria-31_ziyvpf.jpg",
+    alt: "Proyecto de realidad virtual",
+    title: "VR Educativo",
+    description: "",
+    category: "2022",
+    year: "2022",
+    university: "Julio Garavito",
+    height: 350
+  },
+  {
+    src: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760503676/galeria-32_duqndk.jpg",
+    alt: "Ceremonia de apertura 2022",
+    title: "Inauguración III-CNVTE",
+    description: "",
+    category: "2022",
+    year: "2022",
+    university: "UMNG",
+    height: 330
   }
 ]
