@@ -9,11 +9,13 @@ export default function IVCnvtePage() {
   const winners = [
     {
       team: "Escudería Bravo",
-      university: "Universidad Pascual Bravo"
+      university: "Universidad Pascual Bravo",
+      image: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504033/winner-1_xom9wa.jpg"
     },
     {
       team: "Equipo Kratos",
-      university: "Universidad EAFIT"
+      university: "Universidad EAFIT",
+      image: "https://res.cloudinary.com/djhiec3yj/image/upload/v1760504034/winner-2_lerl1n.jpg"
     }
   ]
 
@@ -144,7 +146,7 @@ export default function IVCnvtePage() {
                 <div className="md:flex md:h-96">
                   <div className="md:w-1/2 relative h-80 md:h-full overflow-hidden">
                     <Image
-                      src={`/media/winners/winner-${index + 1}.jpg`}
+                      src={winner.image}
                       alt={`${winner.team}`}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
