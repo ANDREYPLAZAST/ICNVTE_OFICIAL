@@ -70,4 +70,11 @@ export const universities: University[] = [
     image: "/media/universities/unal-campus.jpg",
     description: "La universidad pública más importante de Colombia, reconocida por su excelencia académica e investigación de alto nivel."
   },
+  {
+    name: "Universidad EIA",
+    city: "Envigado",
+    logo: "/media/logos/EIA.jpg",
+    image: "/media/universities/unal-campus.jpg",
+    description: "La universidad pública más importante de Colombia, reconocida por su excelencia académica e investigación de alto nivel."
+  },
 ]

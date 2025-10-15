@@ -14,10 +14,6 @@ export default function IVCnvtePage() {
     {
       team: "Equipo Kratos",
       university: "Universidad EAFIT"
-    },
-    {
-      team: "¿¿ ??",
-      university: "¿¿ ??"
     }
   ]
 
