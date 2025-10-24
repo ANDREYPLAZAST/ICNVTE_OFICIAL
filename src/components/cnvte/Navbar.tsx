@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Space_Grotesk } from 'next/font/google'
-import { Menu, Calendar, Trophy } from 'lucide-react'
+import { Menu, Calendar, Trophy, Radio } from 'lucide-react'
 import MobileMenu from './MobileMenu'
 
 const spaceGrotesk = Space_Grotesk({
@@ -16,6 +16,7 @@ import { Home, Archive, ImageIcon, FileText, Mail } from 'lucide-react'
 
 const navigation = [
   { name: 'Inicio', href: '/', icon: Home, color: 'from-slate-700 to-slate-800', desc: 'Página principal' },
+  { name: 'En Vivo', href: '/vehicle', icon: Radio, color: 'from-red-600 to-red-700', desc: 'Datos en tiempo real' },
   { name: 'IV-CNVTE', href: '/iv-cnvte', icon: Archive, color: 'from-gray-700 to-gray-800', desc: 'Edición anterior' },
   { name: 'Galería', href: '/gallery', icon: ImageIcon, color: 'from-slate-600 to-slate-700', desc: 'Fotos y videos' },
   { name: 'Reglamento', href: '/reglamento', icon: FileText, color: 'from-gray-600 to-gray-700', desc: 'Normas oficiales' },
@@ -28,15 +29,20 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState('Inicio')
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isDarkPage, setIsDarkPage] = useState(false)
+  const [isVehiclePage, setIsVehiclePage] = useState(false)
 
   useEffect(() => {
-    // Check if current page has dark background
-    const checkDarkPage = () => {
+    // Check if current page has dark background or is vehicle page
+    const checkPage = () => {
       const pathname = window.location.pathname
+      console.log('Current pathname:', pathname)
+      // Only IV-CNVTE page has dark background, all others should show navbar background
       setIsDarkPage(pathname === '/iv-cnvte')
+      setIsVehiclePage(pathname.includes('/vehicle'))
+      console.log('isVehiclePage set to:', pathname.includes('/vehicle'))
     }
-    
-    checkDarkPage()
+
+    checkPage()
     
     const handleScroll = () => {
       const scrollY = window.scrollY
@@ -77,9 +83,13 @@ export default function Navbar() {
       </div>
 
       <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 shadow-lg border-b border-gray-200' 
-          : 'bg-transparent'
+        isVehiclePage
+          ? 'bg-white shadow-lg border-b border-gray-200'
+          : isScrolled
+          ? 'bg-white/95 shadow-lg border-b border-gray-200'
+          : isDarkPage
+          ? 'bg-transparent'
+          : 'bg-white/95 shadow-sm'
       }`}>
         
         {/* Professional Top Bar */}
@@ -129,7 +139,7 @@ export default function Navbar() {
                     width={48}
                     height={48}
                     className={`w-full h-full object-contain transition-opacity duration-300 absolute top-0 left-0 ${
-                      isScrolled ? 'opacity-0' : 'opacity-100'
+                      isVehiclePage || isScrolled ? 'opacity-0' : 'opacity-100'
                     }`}
                   />
                   {/* Logo para fondo blanco */}
@@ -139,7 +149,7 @@ export default function Navbar() {
                     width={48}
                     height={48}
                     className={`w-full h-full object-contain transition-opacity duration-300 absolute top-0 left-0 ${
-                      isScrolled ? 'opacity-100' : 'opacity-0'
+                      isVehiclePage || isScrolled ? 'opacity-100' : 'opacity-0'
                     }`}
                   />
                 </div>
@@ -147,12 +157,12 @@ export default function Navbar() {
               
               <div className="flex flex-col">
                 <span className={`text-2xl font-bold transition-colors duration-300 ${
-                  isScrolled ? 'text-slate-800' : (isDarkPage ? 'text-white' : 'text-white')
+                  isVehiclePage || isScrolled ? 'text-slate-800' : (isDarkPage ? 'text-white' : 'text-white')
                 }`}>
                   V-CNVTE
                 </span>
                 <span className={`text-xs font-medium tracking-wide uppercase transition-colors duration-300 ${
-                  isScrolled ? 'text-gray-600' : (isDarkPage ? 'text-gray-200' : 'text-gray-200')
+                  isVehiclePage || isScrolled ? 'text-gray-600' : (isDarkPage ? 'text-gray-200' : 'text-gray-200')
                 }`}>
                   COMPETENCIA 2025
                 </span>
@@ -173,22 +183,24 @@ export default function Navbar() {
           </div>
           
           {/* Professional Desktop Navigation */}
-          <div className="hidden lg:flex lg:gap-x-1">
+          <div className="hidden lg:flex lg:gap-x-1 lg:items-center">
             {navigation.map((item) => {
               const isActive = activeSection === item.name
-              
+              const IconComponent = item.icon
+
               return (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${spaceGrotesk.className} ${
-                    isScrolled
+                    isVehiclePage || isScrolled
                       ? 'text-blue-600 hover:text-blue-800 hover:bg-gray-100'
                       : isDarkPage
                       ? 'text-white hover:text-gray-200 hover:bg-white/10'
                       : 'text-white hover:text-gray-200'
                   }`}
                 >
+                  {item.name === 'En Vivo' && <IconComponent className="w-4 h-4" />}
                   <span>{item.name}</span>
                 </Link>
               )
@@ -200,8 +212,8 @@ export default function Navbar() {
             <Link
               href="/contacto"
               className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md ${
-                isScrolled 
-                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                isVehiclePage || isScrolled
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white'
                   : isDarkPage
                   ? 'bg-blue-600 hover:bg-blue-700 text-white'
                   : 'bg-white/20 hover:bg-white/30 text-white border border-white/50'
