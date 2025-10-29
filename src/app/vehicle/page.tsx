@@ -233,15 +233,27 @@ export default function Vehicle() {
   // }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-40 pb-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto space-y-6 animate-fade-in-up">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">Vehicle Panel</h1>
-            <p className="text-gray-600">Real-time monitoring and control</p>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero section with blue background for navbar visibility */}
+      <div className="bg-gradient-to-br from-slate-700 to-slate-800 pt-32 pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-white mb-4">Vehicle Panel</h1>
+            <p className="text-slate-200 text-lg">Real-time monitoring and control</p>
           </div>
-          <div className="status-approved">
-            Vehicle Active
+        </div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto space-y-6 animate-fade-in-up px-4 sm:px-6 lg:px-8 -mt-6">
+        <div className="bg-white rounded-xl shadow-sm p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">Monitor de Vehículos</h2>
+              <p className="text-gray-600">Selecciona un equipo para monitorear en tiempo real</p>
+            </div>
+            <div className="status-approved">
+              Sistema Activo
+            </div>
           </div>
         </div>
 
