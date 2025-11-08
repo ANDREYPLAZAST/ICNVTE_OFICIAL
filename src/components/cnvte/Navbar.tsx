@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Space_Grotesk } from 'next/font/google'
-import { Menu, Calendar, Trophy, Radio } from 'lucide-react'
+import { Menu, Calendar, Trophy, Radio, Home, Archive, ImageIcon, FileText, Mail } from 'lucide-react'
 import MobileMenu from './MobileMenu'
 
 const spaceGrotesk = Space_Grotesk({
@@ -12,10 +12,9 @@ const spaceGrotesk = Space_Grotesk({
   weight: ['400', '500', '600', '700'],
 })
 
-import { Home, Archive, ImageIcon, FileText, Mail } from 'lucide-react'
-
 const navigation = [
   { name: 'Inicio', href: '/', icon: Home, color: 'from-slate-700 to-slate-800', desc: 'Página principal' },
+  { name: 'Resultados', href: '/resultados', icon: Trophy, color: 'from-yellow-600 to-yellow-700', desc: 'Resultados de competencia' },
   { name: 'En Vivo', href: '/vehicle', icon: Radio, color: 'from-red-600 to-red-700', desc: 'Datos en tiempo real' },
   { name: 'IV-CNVTE', href: '/iv-cnvte', icon: Archive, color: 'from-gray-700 to-gray-800', desc: 'Edición anterior' },
   { name: 'Galería', href: '/gallery', icon: ImageIcon, color: 'from-slate-600 to-slate-700', desc: 'Fotos y videos' },
