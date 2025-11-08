@@ -305,6 +305,12 @@ export default function ResultadosPage() {
               </tbody>
             </table>
           </div>
+          
+          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <p className="text-sm text-blue-800 text-center">
+              <span className="font-semibold">GP entrega 300 puntos</span> los cuales están en proceso de revisión
+            </p>
+          </div>
         </div>
       </section>
     </main>
