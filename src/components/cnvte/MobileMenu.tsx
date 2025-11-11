@@ -125,7 +125,7 @@ export default function MobileMenu({ open, setOpen, navigation }: MobileMenuProp
                           className="inline-flex items-center justify-center w-full px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
                           onClick={() => setOpen(false)}
                         >
-                          Participar Ahora
+                          Participar en Futuras Ediciones
                         </Link>
                       </div>
                     </div>

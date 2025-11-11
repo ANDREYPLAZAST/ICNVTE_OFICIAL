@@ -97,7 +97,7 @@ export default function Navbar() {
                   <span className="text-blue-400 font-medium">Inscripciones Cerradas</span>
                 </div>
                 <div className="bg-blue-600 px-3 py-1 rounded text-xs font-medium text-white">
-                  Fase: Espera de competencia
+                  Fase: Termianda
                 </div>
               </div>
             </div>
@@ -200,7 +200,7 @@ export default function Navbar() {
                   : 'bg-white/20 hover:bg-white/30 text-white border border-white/50'
               }`}
             >
-              Participar Ahora
+              Participar en Futuras Ediciones
             </Link>
           </div>
         </nav>

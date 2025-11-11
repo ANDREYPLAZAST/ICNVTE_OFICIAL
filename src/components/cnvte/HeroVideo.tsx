@@ -116,7 +116,7 @@ export default function HeroVideo() {
             href="/v-cnvte"
             className="group relative px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105 shadow-lg"
           >
-            <span className="relative z-10">Participar Ahora</span>
+            <span className="relative z-10">Participar en Futuras Ediciones</span>
           </a>
           
           <a
