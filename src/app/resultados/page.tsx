@@ -10,9 +10,10 @@ interface ResultadoEquipo {
   penalizacionesAceleracion: number | null
   agilidad: number | null
   ordenLlegada: number | null
-  eficiencia: number | null
+  eficiencia: string | null
   penalizacionesGrandPrix: number | null
   valorParcial: number | null
+  posiciones: number | null
 }
 
 const resultados: ResultadoEquipo[] = [
@@ -24,9 +25,10 @@ const resultados: ResultadoEquipo[] = [
     penalizacionesAceleracion: 0,
     agilidad: 100,
     ordenLlegada: 100,
-    eficiencia: null,
+    eficiencia: '120 | 80,75',
     penalizacionesGrandPrix: 10,
-    valorParcial: 290
+    valorParcial: 410,
+    posiciones: 1
   },
   {
     ordenSalida: 2,
@@ -36,9 +38,10 @@ const resultados: ResultadoEquipo[] = [
     penalizacionesAceleracion: 0,
     agilidad: 70,
     ordenLlegada: 80,
-    eficiencia: null,
+    eficiencia: '180 | 106,75',
     penalizacionesGrandPrix: 15,
-    valorParcial: 225
+    valorParcial: 405,
+    posiciones: 2
   },
   {
     ordenSalida: 3,
@@ -48,9 +51,10 @@ const resultados: ResultadoEquipo[] = [
     penalizacionesAceleracion: 0,
     agilidad: 90,
     ordenLlegada: 90,
-    eficiencia: null,
+    eficiencia: '100 | 70,35',
     penalizacionesGrandPrix: 0,
-    valorParcial: 260
+    valorParcial: 360,
+    posiciones: 3
   },
   {
     ordenSalida: 4,
@@ -60,9 +64,10 @@ const resultados: ResultadoEquipo[] = [
     penalizacionesAceleracion: 20,
     agilidad: 80,
     ordenLlegada: 70,
-    eficiencia: null,
+    eficiencia: '80 | 50,55',
     penalizacionesGrandPrix: 0,
-    valorParcial: 200
+    valorParcial: 280,
+    posiciones: 6
   },
   {
     ordenSalida: 5,
@@ -72,21 +77,23 @@ const resultados: ResultadoEquipo[] = [
     penalizacionesAceleracion: 0,
     agilidad: 80,
     ordenLlegada: 0,
-    eficiencia: 0,
+    eficiencia: null,
     penalizacionesGrandPrix: 10,
-    valorParcial: 130
+    valorParcial: 130,
+    posiciones: 8
   },
   {
     ordenSalida: 6,
     equipo: 'HELLMEC',
     mejorTiempo: '14,46',
     puntosAceleracion: 50,
-    penalizacionesAceleracion: 0,
+    penalizacionesAceleracion: 20,
     agilidad: 40,
     ordenLlegada: 40,
-    eficiencia: null,
+    eficiencia: '200 | 235,3',
     penalizacionesGrandPrix: 10,
-    valorParcial: 120
+    valorParcial: 300,
+    posiciones: 4
   },
   {
     ordenSalida: 7,
@@ -96,9 +103,10 @@ const resultados: ResultadoEquipo[] = [
     penalizacionesAceleracion: 0,
     agilidad: 40,
     ordenLlegada: 0,
-    eficiencia: 0,
+    eficiencia: null,
     penalizacionesGrandPrix: 0,
-    valorParcial: 80
+    valorParcial: 80,
+    posiciones: 9
   },
   {
     ordenSalida: 8,
@@ -110,7 +118,8 @@ const resultados: ResultadoEquipo[] = [
     ordenLlegada: 0,
     eficiencia: null,
     penalizacionesGrandPrix: 20,
-    valorParcial: 50
+    valorParcial: 50,
+    posiciones: 10
   },
   {
     ordenSalida: 9,
@@ -120,9 +129,10 @@ const resultados: ResultadoEquipo[] = [
     penalizacionesAceleracion: 0,
     agilidad: 50,
     ordenLlegada: 60,
-    eficiencia: null,
+    eficiencia: '160 | 88,72',
     penalizacionesGrandPrix: 0,
-    valorParcial: 130
+    valorParcial: 290,
+    posiciones: 5
   },
   {
     ordenSalida: 10,
@@ -134,7 +144,8 @@ const resultados: ResultadoEquipo[] = [
     ordenLlegada: 0,
     eficiencia: null,
     penalizacionesGrandPrix: 5,
-    valorParcial: -5
+    valorParcial: -5,
+    posiciones: 13
   },
   {
     ordenSalida: 11,
@@ -146,7 +157,8 @@ const resultados: ResultadoEquipo[] = [
     ordenLlegada: 0,
     eficiencia: null,
     penalizacionesGrandPrix: 0,
-    valorParcial: 0
+    valorParcial: 0,
+    posiciones: 12
   },
   {
     ordenSalida: 12,
@@ -158,7 +170,8 @@ const resultados: ResultadoEquipo[] = [
     ordenLlegada: 0,
     eficiencia: null,
     penalizacionesGrandPrix: 0,
-    valorParcial: 20
+    valorParcial: 20,
+    posiciones: 11
   },
   {
     ordenSalida: 13,
@@ -168,21 +181,37 @@ const resultados: ResultadoEquipo[] = [
     penalizacionesAceleracion: 30,
     agilidad: 30,
     ordenLlegada: 50,
-    eficiencia: null,
+    eficiencia: '140 | 83,06',
     penalizacionesGrandPrix: 5,
-    valorParcial: 45
+    valorParcial: 185,
+    posiciones: 7
   }
 ]
 
 export default function ResultadosPage() {
   const formatValue = (value: number | string | null | undefined): string => {
-    if (value === null || value === undefined) return 'Pendiente'
+    if (value === null || value === undefined) return ''
     return value.toString()
   }
 
   const hasPenalty = (value: number | null | undefined): boolean => {
     return value !== null && value !== undefined && value > 0
   }
+
+  const hasZeroOrder = (value: number | null | undefined): boolean => {
+    return value !== null && value !== undefined && value === 0
+  }
+
+  const hasEmptyEfficiency = (value: string | null | undefined): boolean => {
+    return value === null || value === undefined || value === ''
+  }
+
+  // Ordenar resultados por posiciones
+  const resultadosOrdenados = [...resultados].sort((a, b) => {
+    const posA = a.posiciones ?? 999
+    const posB = b.posiciones ?? 999
+    return posA - posB
+  })
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -204,112 +233,131 @@ export default function ResultadosPage() {
       </section>
 
       {/* Results Table Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 max-w-7xl">
           <SectionTitle 
             title="Tabla de Resultados" 
             subtitle="Resultados completos de la competencia"
           />
           
-          <div className="mt-8 overflow-x-auto shadow-lg rounded-lg border border-gray-200">
+          <div className="mt-8 overflow-x-auto shadow-2xl rounded-xl border border-gray-300 bg-white">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-slate-100">
-                  <th rowSpan={2} className="border border-gray-300 text-center font-bold py-3 px-4">
-                    ORDEN DE SALIDA
+                <tr className="bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+                  <th rowSpan={2} className="border-r border-slate-600 text-center font-bold py-4 px-3 text-sm whitespace-nowrap">
+                    ORDEN DE<br />SALIDA
                   </th>
-                  <th rowSpan={2} className="border border-gray-300 text-center font-bold py-3 px-4">
+                  <th rowSpan={2} className="border-r border-slate-600 text-center font-bold py-4 px-4 text-sm min-w-[140px]">
                     EQUIPO
                   </th>
-                  <th rowSpan={2} className="border border-gray-300 text-center font-bold py-3 px-4">
-                    MEJOR TIEMPO
+                  <th rowSpan={2} className="border-r border-slate-600 text-center font-bold py-4 px-3 text-sm whitespace-nowrap">
+                    MEJOR<br />TIEMPO
                   </th>
-                  <th colSpan={3} className="border border-gray-300 text-center font-bold bg-blue-50 py-3 px-4">
+                  <th colSpan={3} className="border-r border-slate-600 text-center font-bold bg-blue-600 py-3 px-2 text-sm">
                     ACELERACIÓN
                   </th>
-                  <th colSpan={4} className="border border-gray-300 text-center font-bold bg-green-50 py-3 px-4">
+                  <th colSpan={4} className="border-r border-slate-600 text-center font-bold bg-emerald-600 py-3 px-2 text-sm">
                     GRAND PRIX
                   </th>
+                  <th rowSpan={2} className="text-center font-bold bg-emerald-700 py-4 px-4 text-sm whitespace-nowrap">
+                    POSICIONES
+                  </th>
                 </tr>
-                <tr className="bg-slate-100">
-                  <th className="border border-gray-300 text-center font-semibold bg-blue-50 py-2 px-4">
+                <tr className="bg-gradient-to-r from-slate-700 to-slate-800 text-white">
+                  <th className="border-r border-slate-600 text-center font-semibold bg-blue-600 py-3 px-2 text-xs">
                     PUNTOS
                   </th>
-                  <th className="border border-gray-300 text-center font-semibold bg-blue-50 py-2 px-4">
-                    PENALIZACIONES
+                  <th className="border-r border-slate-600 text-center font-semibold bg-blue-600 py-3 px-2 text-xs">
+                    PENALIZ.
                   </th>
-                  <th className="border border-gray-300 text-center font-semibold py-2 px-4">
+                  <th className="border-r border-slate-600 text-center font-semibold bg-blue-600 py-3 px-2 text-xs">
                     AGILIDAD
                   </th>
-                  <th className="border border-gray-300 text-center font-semibold bg-green-50 py-2 px-4">
-                    ORDEN DE LLEGADA
+                  <th className="border-r border-slate-600 text-center font-semibold bg-emerald-600 py-3 px-2 text-xs whitespace-nowrap">
+                    ORDEN<br />LLEGADA
                   </th>
-                  <th className="border border-gray-300 text-center font-semibold bg-green-50 py-2 px-4">
+                  <th className="border-r border-slate-600 text-center font-semibold bg-emerald-600 py-3 px-2 text-xs">
                     EFICIENCIA
                   </th>
-                  <th className="border border-gray-300 text-center font-semibold bg-green-50 py-2 px-4">
-                    PENALIZACIONES
+                  <th className="border-r border-slate-600 text-center font-semibold bg-emerald-600 py-3 px-2 text-xs">
+                    PENALIZ.
                   </th>
-                  <th className="border border-gray-300 text-center font-semibold bg-green-50 py-2 px-4">
-                    VALOR PARCIAL
+                  <th className="border-r border-slate-600 text-center font-semibold bg-emerald-600 py-3 px-2 text-xs whitespace-nowrap">
+                    VALOR<br />PARCIAL
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {resultados.map((resultado, index) => (
-                  <tr key={index} className="hover:bg-gray-50">
-                    <td className="border border-gray-300 text-center font-medium py-3 px-4">
+                {resultadosOrdenados.map((resultado, index) => (
+                  <tr 
+                    key={index} 
+                    className={`transition-colors duration-150 ${
+                      index % 2 === 0 
+                        ? 'bg-white hover:bg-blue-50' 
+                        : 'bg-gray-50 hover:bg-blue-50'
+                    }`}
+                  >
+                    <td className="border-r border-b border-gray-200 text-center font-semibold py-3 px-3 text-gray-700">
                       {resultado.ordenSalida}
                     </td>
-                    <td className="border border-gray-300 text-center font-semibold py-3 px-4">
+                    <td className="border-r border-b border-gray-200 text-left font-bold py-3 px-4 text-gray-900">
                       {resultado.equipo}
                     </td>
-                    <td className="border border-gray-300 text-center py-3 px-4">
-                      {formatValue(resultado.mejorTiempo) || ''}
+                    <td className="border-r border-b border-gray-200 text-center font-mono py-3 px-3 text-gray-700">
+                      {formatValue(resultado.mejorTiempo) || '-'}
                     </td>
-                    <td className="border border-gray-300 text-center py-3 px-4">
-                      {formatValue(resultado.puntosAceleracion) || ''}
+                    <td className="border-r border-b border-gray-200 text-center font-semibold py-3 px-3 text-gray-800">
+                      {formatValue(resultado.puntosAceleracion) || '-'}
                     </td>
                     <td 
-                      className={`border border-gray-300 text-center py-3 px-4 ${
+                      className={`border-r border-b border-gray-200 text-center font-bold py-3 px-3 ${
                         hasPenalty(resultado.penalizacionesAceleracion)
-                          ? 'bg-red-100 text-red-700 font-semibold' 
-                          : ''
+                          ? 'bg-red-50 text-red-700' 
+                          : 'text-gray-600'
                       }`}
                     >
-                      {formatValue(resultado.penalizacionesAceleracion)}
+                      {formatValue(resultado.penalizacionesAceleracion) || '0'}
+                    </td>
+                    <td className="border-r border-b border-gray-200 text-center font-medium py-3 px-3 text-gray-700">
+                      {formatValue(resultado.agilidad) || '-'}
                     </td>
                     <td 
-                      className={`border border-gray-300 text-center py-3 px-4 ${
-                        resultado.equipo === 'VTECCI' && resultado.agilidad === 50
-                          ? 'bg-red-100 text-red-700' 
-                          : ''
+                      className={`border-r border-b border-gray-200 text-center font-semibold py-3 px-3 ${
+                        hasZeroOrder(resultado.ordenLlegada)
+                          ? 'bg-red-50 text-red-700' 
+                          : 'text-gray-800'
                       }`}
                     >
-                      {formatValue(resultado.agilidad) || ''}
+                      {formatValue(resultado.ordenLlegada) || '-'}
                     </td>
-                    <td className="border border-gray-300 text-center py-3 px-4">
-                      {formatValue(resultado.ordenLlegada) || ''}
+                    <td 
+                      className={`border-r border-b border-gray-200 text-center py-3 px-3 ${
+                        hasEmptyEfficiency(resultado.eficiencia)
+                          ? 'bg-red-50 text-gray-700' 
+                          : 'text-gray-700'
+                      }`}
+                    >
+                      {formatValue(resultado.eficiencia) || '-'}
                     </td>
-                    <td className="border border-gray-300 text-center py-3 px-4">
-                      {formatValue(resultado.eficiencia) || ''}
+                    <td 
+                      className={`border-r border-b border-gray-200 text-center font-bold py-3 px-3 ${
+                        hasPenalty(resultado.penalizacionesGrandPrix)
+                          ? 'bg-red-50 text-red-700' 
+                          : 'text-gray-600'
+                      }`}
+                    >
+                      {formatValue(resultado.penalizacionesGrandPrix) || '0'}
                     </td>
-                    <td className="border border-gray-300 text-center py-3 px-4">
-                      {formatValue(resultado.penalizacionesGrandPrix) || ''}
+                    <td className="border-r border-b border-gray-200 text-center font-bold text-lg py-3 px-4 text-slate-800 bg-blue-50">
+                      {formatValue(resultado.valorParcial) || '-'}
                     </td>
-                    <td className="border border-gray-300 text-center bg-blue-100 font-semibold py-3 px-4">
-                      {formatValue(resultado.valorParcial) || ''}
+                    <td className="border-b border-gray-200 text-center font-bold text-xl py-3 px-4 bg-emerald-100 text-emerald-800">
+                      {formatValue(resultado.posiciones) || '-'}
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-          </div>
-          
-          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <p className="text-sm text-blue-800 text-center">
-              <span className="font-semibold">GP entrega 300 puntos</span> los cuales están en proceso de revisión
-            </p>
           </div>
         </div>
       </section>
